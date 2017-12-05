@@ -5,7 +5,7 @@ class Login extends Component {
   handleLogin = event => {
   	event.preventDefault();
   	// console.log("HANDLE LOGIN....");
-  	window.location='http://localhost:8080/api/auth/linkedin';
+  	window.location='/api/auth/linkedin';
   };
 
   render() {
