@@ -79,7 +79,7 @@ router.route('/linkedin/callback')
                     .then(function (user) {
                         console.log("added user: ", userData.emails[0].value);
                         // TODO: redirect to the home page in react app
-                        res.redirect('http://localhost:3000/');
+                        res.redirect('/');
                     })
                     .catch(function (err) {
                         // If an error occurred, send it to the client
@@ -89,7 +89,7 @@ router.route('/linkedin/callback')
                 else {
                     // user already exists in the DB.
                     // TODO: just redirect to the home page in react app
-                    res.redirect('http://localhost:3000/');
+                    res.redirect('/');
                 }
             })
             .catch(function (err) {
