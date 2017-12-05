@@ -11,8 +11,8 @@ class HistoryOfEvents extends Component {
 
   // When the component mounts
   componentDidMount() {
-    this.loadHostedEvents(this.props.currentUserId);
-    this.loadAttendedEvents(this.props.currentUserLinkedinId);
+        this.loadHostedEvents(localStorage.getItem("user"));
+        this.loadAttendedEvents(localStorage.getItem("id"));
   }
 
 loadHostedEvents = (userId) => {
@@ -26,15 +26,16 @@ loadAttendedEvents = (userId) => {
 	});
 }
 render() {
-  if(this.props.currentUserId && this.props.currentUserLinkedinId) {
+        if (localStorage.getItem("user") && localStorage.getItem("id")) {
 	return (
     <div className="col-md-4 col-md-offset-2 bottom thumbnail text-center">
         <div className="thumbnail text-center">
         <h3>My Events</h3>
         </div>
-            <h4>Created By Me</h4>
+                        <h4>I Created</h4>
             <List>
             {
+                                (this.state.eventsHosted.length === 0)? <p><i>None</i></p> :
               this.state.eventsHosted.map(eventHosted => {
 	              return (
 	                <ListItem key={eventHosted.id}>
@@ -44,9 +45,10 @@ render() {
 	            })
           	}
           	</List>
-            <h4>Attended</h4>
+                        <h4>I Checked In</h4>
             <List>
             {
+                                (this.state.eventsAttended.length === 0)? <p><i>None</i></p> :
               this.state.eventsAttended.map(eventHosted => {
 	              return (
 	                <ListItem key={eventHosted.id}>

@@ -10,18 +10,8 @@ import Row from "../components/Row";
 
 class Home extends Component {
     state = {
-        currentUserId: "",
-        currentUserLinkedinId: ""
     };
-    componentWillMount() {
-        this.setUpCurrentUserStates();
-      }
 
-      setUpCurrentUserStates = () => {
-        this.setState({currentUserLinkedinId: localStorage.getItem("id")});
-        this.setState({currentUserId: localStorage.getItem("user")});
-
-      }
     newSearchResultsAvailable = (results) => {
       this.setState({eventSearchResults: results});
     };
@@ -34,12 +24,8 @@ class Home extends Component {
                         newSearchResultsAvailable={this.newSearchResultsAvailable}
                 />
             </Row>
-            <HistoryOfEvents 
-                currentUserId = {this.state.currentUserId}
-                currentUserLinkedinId = {this.state.currentUserLinkedinId}
-            />
-            <EventSearchResults
-                searchResults={this.state.eventSearchResults}
+            <HistoryOfEvents/>
+            <EventSearchResults searchResults={this.state.eventSearchResults}
             />
         </div>
         );
