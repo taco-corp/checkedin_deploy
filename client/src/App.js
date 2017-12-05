@@ -20,7 +20,7 @@ class App extends Component {
         .then(res => {
             if (res && res.data && res.data.displayName !== null) {
                 this.setState({isLoggedIn: true});
-                console.log("App.js: getUserInfo - returned a logged in user: " + res.data.displayName);
+                console.log("App.js: getUserInfo - returned a logged in user");
                 localStorage.setItem("id", res.data.id);
                 localStorage.setItem("displayName", res.data.displayName);
                 localStorage.setItem("picture", res.data._json.pictureUrl); 
