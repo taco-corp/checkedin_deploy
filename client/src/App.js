@@ -20,7 +20,7 @@ class App extends Component {
         .then(res => {
             if (res && res.data && res.data.displayName !== null) {
                 this.setState({isLoggedIn: true});
-                //console.log("Response Data", res.data);
+                console.log("App.js: getUserInfo - returned a logged in user: ", res.data.displayName);
                 localStorage.setItem("id", res.data.id);
                 localStorage.setItem("displayName", res.data.displayName);
                 localStorage.setItem("picture", res.data._json.pictureUrl); 
@@ -33,6 +33,7 @@ class App extends Component {
                 //    change the false to true in the next line if
                 //       you want to disable the login function
                 // *****************************************************
+                console.log("App.js: getUserInfo - Need to Log In!!");
                 this.setState({isLoggedIn: false});
             }
         })

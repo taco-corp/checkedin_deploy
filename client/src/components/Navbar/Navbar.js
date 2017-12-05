@@ -10,7 +10,8 @@ class Navbar extends Component {
   };
 
   componentDidMount() {
-    this.getUserInfo();
+      console.log("Navbar.js: call getUserInfo to get user info to display on nav bar");
+      this.getUserInfo();
   }
 
   // Loads all books  and sets them to this.state.books
