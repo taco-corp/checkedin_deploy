@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import '../App.css';
+import axios from 'axios';
 
 class Login extends Component {
   handleLogin = event => {
   	event.preventDefault();
   	// console.log("HANDLE LOGIN....");
-  	window.location='/api/auth/linkedin';
+    //window.location='/api/auth/linkedin';
+    axios.get('/api/auth/linkedin');
   };
 
   render() {
