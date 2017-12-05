@@ -10,7 +10,7 @@ class Navbar extends Component {
   };
 
   componentDidMount() {
-      console.log("Navbar.js: call getUserInfo to get user info to display on nav bar");
+      //console.log("Navbar.js: call getUserInfo to get user info to display on nav bar");
       this.getUserInfo();
   }
 
