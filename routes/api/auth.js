@@ -7,7 +7,7 @@ var db = require("../../models");
 //var ids = require("./ids");
 
 //Comment next line in to deploy to heroku
-var ids = "process.env";
+var ids = process.env;
 
 
 var passport = require('passport');
