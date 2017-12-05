@@ -3,11 +3,13 @@ const usersController = require("../../controllers/usersController");
 
 var db = require("../../models");
 
-var ids = require("./ids");
+//Comment next line out to deploy to heroku
+//var ids = require("./ids");
+
 var passport = require('passport');
-var LINKEDIN_CLIENT_ID = ids.LINKEDIN_CLIENT_ID;
-var LINKEDIN_CLIENT_SECRET = ids.LINKEDIN_CLIENT_SECRET;
-var CALLBACKURL = ids.CALLBACKURL;
+var LINKEDIN_CLIENT_ID = ids.LINKEDIN_CLIENT_ID || process.env.LINKEDIN_CLIENT_ID;
+var LINKEDIN_CLIENT_SECRET = ids.LINKEDIN_CLIENT_SECRET || process.env.LINKEDIN_CLIENT_SECRET;
+var CALLBACKURL = ids.CALLBACKURL || process.env.CALLBACKURL;
 var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 
 // Passport session setup.
