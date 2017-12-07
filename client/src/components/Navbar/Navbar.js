@@ -27,10 +27,10 @@ class Navbar extends Component {
   };
   logout = () => {
     API.logout()
-      .then(res => 
+      .then(res =>
         {
           this.setState({ loggedInUserName: "" });
-          /* 
+          /*
           Redirects to LinkedIn upon logout. Consequently also
           logs out of LinkedIn.
           */

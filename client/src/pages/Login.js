@@ -7,7 +7,7 @@ class Login extends Component {
   	event.preventDefault();
   	// console.log("HANDLE LOGIN....");
     window.location='/api/auth/linkedin';
-    //axios.get('/api/auth/linkedin');
+    return false;
   };
 
   render() {
