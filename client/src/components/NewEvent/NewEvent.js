@@ -8,7 +8,7 @@ class NewEvent extends Component {
     redirectToEventCreation= event => {
         event.preventDefault();
         window.location='/newevent';
-        return false; 
+        return false;
     };
 
     render() {
